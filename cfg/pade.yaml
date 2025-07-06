@@ -1,0 +1,75 @@
+RNG_SEED: 5
+MODEL:
+
+  ARCH: resnet
+#  ARCH: Vgg16
+
+  CLASSES: 9
+  ADA_PARAM:   # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+#    - conv
+    - bn
+#    - gn
+#    - in
+#    - fc
+#    - all
+
+#  ADAPTATION: source
+  # ADAPTATION: SHOT
+  # ADAPTATION: TENT
+  # ADAPTATION: NORM
+  # ADAPTATION: ENERGY
+  ADAPTATION: Energy_InforNCE
+#  ADAPTATION: ENERGY_SHOT
+#  ADAPTATION: Energy_Tent
+#  ADAPTATION: PL
+
+
+
+
+# 无注意力网络
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain1.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain2.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain3.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain4.pth
+
+
+# 验证标签平滑机制
+#  WEIGHTS: D:\yuzhen\PADE\Smothing_labels\Domain1.pth
+#  WEIGHTS: D:\yuzhen\PADE\Smothing_labels\Domain2.pth
+#  WEIGHTS: D:\yuzhen\PADE\Smothing_labels\Domain3.pth
+#  WEIGHTS: D:\yuzhen\PADE\Smothing_labels\Domain4.pth
+
+# 仅添加标签平滑机制，无注意力机制
+#  WEIGHTS: D:\yuzhen\PADE\Paper_Smooth\Domain1.pth
+#  WEIGHTS: D:\yuzhen\PADE\Paper_Smooth\Domain2.pth
+#  WEIGHTS: D:\yuzhen\PADE\Paper_Smooth\Domain3.pth
+#  WEIGHTS: D:\yuzhen\PADE\Paper_Smooth\Domain4.pth
+
+# 有注意力网络
+  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights\Domain1.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights\Domain2.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights\Domain3.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights\Domain4.pth
+
+DATASET:
+  NAME: one_dimension
+  IMG_SIZE: 1024
+  NUM_CHANNEL: 1
+  NUM_IMAGES: 5000000000000
+
+#  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain1\test
+#  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain2\test
+#  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain3\test
+  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain4\test
+
+
+OPTIM:
+  BATCH_SIZE: 1024
+#  METHOD: Adam
+  METHOD: sgd
+  STEPS: 5
+  STEPS_OUT: 10
+  BETA: 0.9
+  LR: 0.001
+  WD: 0.01
+

@@ -1,0 +1,52 @@
+# 测试集样本容量：4118
+RNG_SEED: 1
+MODEL:
+  ARCH: resnet
+#  ARCH: Vgg16
+  CLASSES: 4
+  ADA_PARAM:   # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+  #  - conv
+    - bn
+#    - gn
+  #  - in
+    # - fc
+#    - all
+
+#  ADAPTATION: energy
+#  ADAPTATION: Energy_InforNCE
+  ADAPTATION: SHOT
+  # ADAPTATION: source
+  # ADAPTATION: norm
+  # ADAPTATION: pl
+
+#  WEIGHTS: G:\数据集\机械故障诊断数据集\JUST_USE\一维卷积测试权重\domain1.pth
+  WEIGHTS: G:\数据集\机械故障诊断数据集\JUST_USE\一维卷积测试权重\domain2.pth
+#  WEIGHTS: G:\数据集\机械故障诊断数据集\JUST_USE\一维卷积测试权重\domain3.pth
+#  WEIGHTS: G:\数据集\机械故障诊断数据集\JUST_USE\一维卷积测试权重\domain4.pth
+#  WEIGHTS: G:\数据集\机械故障诊断数据集\JUST_USE\一维卷积测试权重\domain5.pth
+#  WEIGHTS: G:\数据集\机械故障诊断数据集\JUST_USE\一维卷积测试权重\domain6.pth
+DATASET:
+  NAME: one_dimension
+  IMG_SIZE: 512
+  NUM_CHANNEL: 1
+  NUM_IMAGES: 10000000
+#  ROOT: G:\数据集\机械故障诊断数据集\JUST_USE\use\domain1\test
+#  ROOT: G:\数据集\机械故障诊断数据集\JUST_USE\use\domain2\test
+#  ROOT: G:\数据集\机械故障诊断数据集\JUST_USE\use\domain3\test
+#  ROOT: G:\数据集\机械故障诊断数据集\JUST_USE\use\domain4\test
+#  ROOT: G:\数据集\机械故障诊断数据集\JUST_USE\use\domain5\test
+  ROOT: G:\数据集\机械故障诊断数据集\JUST_USE\use\domain6\test
+
+EBM:
+  BUFFER_SIZE: 32
+
+OPTIM:
+  BATCH_SIZE: 64
+#  METHOD: Adam
+  METHOD: sgd
+  STEPS: 20
+  STEPS_OUT: 1
+  BETA: 0.9
+  LR: 0.001
+  WD: 1e-3
+

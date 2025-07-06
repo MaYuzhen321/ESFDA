@@ -1,0 +1,54 @@
+RNG_SEED: 1
+MODEL:
+
+  ARCH: resnet
+#  ARCH: Vgg16
+
+  CLASSES: 9
+  ADA_PARAM:   # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+#    - conv
+    - bn
+#    - gn
+#    - in
+#    - fc
+#    - all
+
+
+
+#  ADAPTATION: SHOT
+#  ADAPTATION: TENT
+  ADAPTATION: source
+#  ADAPTATION: ENERGY
+#  ADAPTATION: ENERGY_SHOT
+#  ADAPTATION: Energy_Tent
+#  ADAPTATION: Energy_InforNCE
+#  ADAPTATION: norms
+#  ADAPTATION: pl
+
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain1.pth
+  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain2.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain3.pth
+#  WEIGHTS: D:\yuzhen\PADE\OneDimension\weights_papernet\Domain4.pth
+
+DATASET:
+  NAME: one_dimension
+  IMG_SIZE: 1024
+  NUM_CHANNEL: 1
+  NUM_IMAGES: 500000
+
+#  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain1\test
+#  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain2\test
+  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain3\test
+#  ROOT: D:\yuzhen\PADE\OneDimension\use\Domain4\test
+
+
+OPTIM:
+  BATCH_SIZE: 1024
+#  METHOD: Adam
+  METHOD: sgd
+  STEPS: 15
+  STEPS_OUT: 20
+  BETA: 0.9
+  LR: 0.0001
+  WD: 0.01
+

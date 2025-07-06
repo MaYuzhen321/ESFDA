@@ -1,0 +1,55 @@
+# 测试集样本容量：4118
+RNG_SEED: 1
+MODEL:
+  ARCH: resnet
+  #  ARCH: Vgg16
+  CLASSES: 7
+  ADA_PARAM: # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+    #  - conv
+    - bn
+    #    - gn
+    #  - in
+    # - fc
+  #    - all
+
+#  ADAPTATION: SHOT
+#  ADAPTATION: Energy_InforNCE
+#  ADAPTATION: ENERGY_SHOT
+#  ADAPTATION: Energy_Tent
+#  ADAPTATION: TENT
+#  ADAPTATION: ENERGY
+  ADAPTATION: source
+#  ADAPTATION: NORM
+#  ADAPTATION: PL
+
+  WEIGHTS: D:\yuzhen\HUST\LOAD\weights\domain1.pth
+#  WEIGHTS: D:\yuzhen\HUST\LOAD\weights\domain2.pth
+#  WEIGHTS: D:\yuzhen\HUST\LOAD\weights\domain3.pth
+
+#  WEIGHTS: D:\yuzhen\HUST\LOAD\weights_paper\domain1.pth
+#  WEIGHTS: D:\yuzhen\HUST\LOAD\weights_paper\domain2.pth
+#  WEIGHTS: D:\yuzhen\HUST\LOAD\weights_paper\domain3.pth
+
+DATASET:
+  NAME: one_dimension
+  IMG_SIZE: 1024
+  NUM_CHANNEL: 1
+  NUM_IMAGES: 5000000
+#  ROOT: D:\yuzhen\HUST\LOAD\use\domain1\test
+#  ROOT: D:\yuzhen\HUST\LOAD\use\domain2\test
+  ROOT: D:\yuzhen\HUST\LOAD\use\domain3\test
+
+
+EBM:
+  BUFFER_SIZE: 32
+
+OPTIM:
+  BATCH_SIZE: 64
+  #  METHOD: Adam
+  METHOD: sgd
+  STEPS: 5
+  STEPS_OUT: 10
+  BETA: 0.9
+  LR: 0.001
+  WD: 0.01
+

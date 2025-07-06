@@ -1,0 +1,53 @@
+# 测试集样本容量：4118
+RNG_SEED: 1
+MODEL:
+  ARCH: resnet
+  #  ARCH: Vgg16
+  CLASSES: 33
+  ADA_PARAM: # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+    #  - conv
+    - bn
+    #    - gn
+    #  - in
+    # - fc
+  #    - all
+
+#  ADAPTATION: SHOT
+#  ADAPTATION: Energy_InforNCE
+#  ADAPTATION: ENERGY_SHOT
+#  ADAPTATION: Energy_Tent
+#  ADAPTATION: TENT
+#  ADAPTATION: ENERGY
+  ADAPTATION: source
+#  ADAPTATION: norm
+#  ADAPTATION: pl
+
+
+#  WEIGHTS: D:\yuzhen\华中科技大学数据集\HUST\weights_model_function\domain1.pth
+#  WEIGHTS: D:\yuzhen\华中科技大学数据集\HUST\weights_model_function\domain2.pth
+  WEIGHTS: D:\yuzhen\华中科技大学数据集\HUST\weights_model_function\domain3.pth
+
+
+DATASET:
+  NAME: one_dimension
+  IMG_SIZE: 512
+  NUM_CHANNEL: 1
+  NUM_IMAGES: 5000000
+#  ROOT: D:\yuzhen\华中科技大学数据集\HUST\use\domain1\test
+  ROOT: D:\yuzhen\华中科技大学数据集\HUST\use\domain2\test
+#  ROOT: D:\yuzhen\华中科技大学数据集\HUST\use\domain3\test
+
+
+EBM:
+  BUFFER_SIZE: 32
+
+OPTIM:
+  BATCH_SIZE: 64
+  #  METHOD: Adam
+  METHOD: sgd
+  STEPS: 15
+  STEPS_OUT: 1
+  BETA: 0.9
+  LR: 0.00001
+  WD: 1e-3
+

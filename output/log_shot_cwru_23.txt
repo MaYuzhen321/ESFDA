@@ -1,0 +1,64 @@
+Experiment_num: 1
+Using shot method to adapt!!
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 99.96830427892235
+Acc: 100.0
+Acc: 100.0
+Experiment_num: 2
+Using shot method to adapt!!
+Acc: 100.0
+Acc: 99.93660855784469
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 99.96830427892235
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Experiment_num: 3
+Using shot method to adapt!!
+Acc: 99.93660855784469
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Experiment_num: 4
+Using shot method to adapt!!
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Experiment_num: 5
+Using shot method to adapt!!
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Acc: 100.0
+Experiment_num: 6
+Using shot method to adapt!!
+Acc: 99.96830427892235
+Acc: 100.0

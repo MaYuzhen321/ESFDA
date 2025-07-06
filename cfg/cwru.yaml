@@ -1,0 +1,76 @@
+# 测试集样本容量：4118
+RNG_SEED: 50
+MODEL:
+  ARCH: resnet
+  #  ARCH: Vgg16
+  CLASSES: 10
+  ADA_PARAM: # 'bn' 'gn' 'in' 'conv' 'fc' 'all'
+    #  - conv
+    - bn
+    #    - gn
+    #  - in
+    # - fc
+  #    - all
+
+#  ADAPTATION: SHOT
+  ADAPTATION: Energy_InforNCE
+#  ADAPTATION: ENERGY_SHOT
+#  ADAPTATION: Energy_Tent
+#  ADAPTATION: TENT
+#  ADAPTATION: ENERGY
+#  ADAPTATION: source
+#  ADAPTATION: NORM
+#  ADAPTATION: pl
+
+
+
+# 添加注意力机制以及标签平滑机制
+#  WEIGHTS: D:\yuzhen\CRWU_1024\attention_smoothing\domain1.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\attention_smoothing\domain2.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\attention_smoothing\domain3.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\attention_smoothing\domain4.pth
+
+# 仅添加标签平滑机制
+#  WEIGHTS: D:\yuzhen\CRWU_1024\smoothing_only\domain1.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\smoothing_only\domain2.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\smoothing_only\domain3.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\smoothing_only\domain4.pth
+
+# 无辅助机制
+#  WEIGHTS: D:\yuzhen\CRWU_1024\no_assistance\domain1.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\no_assistance\domain2.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\no_assistance\domain3.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\no_assistance\domain4.pth
+
+# 仅添加注意力机制
+  WEIGHTS: D:\yuzhen\CRWU_1024\weights\domain1.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\weights\domain2.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\weights\domain3.pth
+#  WEIGHTS: D:\yuzhen\CRWU_1024\weights\domain4.pth
+
+DATASET:
+  NAME: one_dimension
+  IMG_SIZE: 1024
+  NUM_CHANNEL: 1
+  NUM_IMAGES: 50000000000000
+
+#  ROOT: D:\yuzhen\CRWU_1024\use\domain1\test
+  ROOT: D:\yuzhen\CRWU_1024\use\domain2\test
+#  ROOT: D:\yuzhen\CRWU_1024\use\domain3\test
+#  ROOT: D:\yuzhen\CRWU_1024\use\domain4\test
+
+
+
+EBM:
+  BUFFER_SIZE: 32
+
+OPTIM:
+  BATCH_SIZE: 1024
+  #  METHOD: Adam
+  METHOD: sgd
+  STEPS: 1
+  STEPS_OUT: 10
+  BETA: 0.9
+  LR: 0.001
+  WD: 1e-3
+
